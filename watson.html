@@ -1,0 +1,66 @@
+<html>
+<head></head>
+<body>
+    <title>UoS Chatbot</title>
+    <div id="chat_container"></div>
+    <script>
+        const container=document.querySelector('#chat_container');
+
+        window.watsonAssistantChatOptions = {
+          integrationID: "b12dc1a6-0e70-454c-a7cd-d465e81db6a7", // The ID of this integration.
+          region: "eu-gb", // The region your integration is hosted in.
+          serviceInstanceID: "7b2a446c-d1fa-4bd8-9718-080a9161b577", // The ID of your service instance.
+          element: container,
+          openChatByDefault: true,
+          hideCloseButton: true,
+          showRestartButton: true,
+          showLauncher: false,
+          serviceDesk: {
+            skipConnectAgentCard: true,
+          },
+          onLoad: async (instance) => {
+            window.webChatInstance = instance;
+            // Render the web chat widget
+            await instance.render();
+            instance.doAutoScroll();
+            instance.updateIsTypingCounter('increase');
+            instance.updateCSSVariables({
+            '$chat-button-hover': '#FFFF00',
+            '$chat-button-selected': '#FF0000',
+          });
+
+            instance.updateCustomMenuOptions([
+              { text: 'Exit Chat', handler: () => window.open('index.html', '_blank') },
+            ]);
+            // Update the home screen configuration
+            instance.updateHomeScreenConfig({
+              is_on: true,
+              greeting: "Welcome! I am Roary McTaverstock, your university advisor. How can I help you today?",
+              starters: {
+                is_on: true,
+                buttons: [
+                  {
+                    label: 'Where can I find books and resources?',
+                  },
+                  {
+                    label: 'What communities are there that I can join to make friends?',
+                  },
+                  {
+                    label: 'Where can I go for help if I am having difficulties?',
+                  }
+                ]
+              },
+            });
+          }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+
+      </script>
+    </body>
+</html>
+
+
