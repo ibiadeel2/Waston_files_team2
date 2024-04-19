@@ -24,6 +24,7 @@
             await instance.render();
             instance.doAutoScroll();
             instance.updateIsTypingCounter('increase');
+            instance.updateIsTypingCounter('decrease');
             instance.updateCSSVariables({
             '$chat-button-hover': '#FFFF00',
             '$chat-button-selected': '#FF0000',
@@ -31,6 +32,10 @@
 
             instance.updateCustomMenuOptions([
               { text: 'Exit Chat', handler: () => window.open('index.html', '_blank') },
+              { text: 'Change Language to Chinese', handler: () => {instance.updateLocale('zh'); }},
+              { text: 'Change Language to French', handler: () => {instance.updateLocale('fr'); }},
+              { text: 'Change Language to Spanish', handler: () => {instance.updateLocale('es'); }},
+              { text: 'Change Language to English (UK)', handler: () => {instance.updateLocale('en-gb'); }},
             ]);
             // Update the home screen configuration
             instance.updateHomeScreenConfig({
