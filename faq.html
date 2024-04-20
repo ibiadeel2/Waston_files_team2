@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(50,50,50);
+        }
+        .faq-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px
+       
+        }
+        .faq-question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: rgb(222, 176, 51);
+            cursor: pointer;
+            color: rgb(250,250,250);
+            border-radius: 15px;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            background-color:  rgb(222, 176, 51);
+            border-left: 3px solid #0044cc;
+            color: rgb(250,250,250);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1  style="color: rgb(250,250,250);" > Frequently Asked Questions </h1>
+        <div class="faq-question">What kind of data does the chatbot collect from users?</div>
+        <div class="faq-answer">
+            <p>Our chatbot collects data that you voluntarily provide during your interactions, such as questions about university services, course details, and your academic needs. .</p>
+        </div>
+
+        <div class="faq-question">How is my data stored and secured?</div>
+        <div class="faq-answer">
+            <p>All data collected by the chatbot is stored on secure cloud servers.  .</p>
+        </div>
+
+        <div class="faq-question">Can I access or request deletion of my data stored by the chatbot?</div>
+        <div class="faq-answer">
+            <p>Yes, you can request access to any personal data stored by the chatbot or ask for its deletion. Please contact our university's IT support team, who will assist you with the process.</p>
+        </div>
+
+        <div class="faq-question">Is my data shared with any third parties?</div>
+        <div class="faq-answer">
+            <p>We do not share your personal data with third-party advertisers.</p>
+        </div>
+
+        <div class="faq-question">Can I access or request deletion of my data stored by the chatbot?</div>
+        <div class="faq-answer">
+            <p>Yes, you can request access to any personal data stored by the chatbot or ask for its deletion. Please contact our university's IT support team, who will assist you with the process.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                if (answer.style.display === 'none') {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
