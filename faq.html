@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(50,50,50);
-        }
-        .faq-container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px
-       
-        }
-        .faq-question {
-            margin: 20px 0;
-            padding: 10px;
-            background-color: rgb(222, 176, 51);
-            cursor: pointer;
-            color: rgb(250,250,250);
-            border-radius: 15px;
-        }
-        .faq-answer {
-            padding: 20px;
-            display: none;
-            background-color:  rgb(222, 176, 51);
-            border-left: 3px solid #0044cc;
-            color: rgb(250,250,250);
-            border-radius: 15px;
-        }
-    </style>
+    <title>UoS AI Advisor - FAQ</title>
+    <link rel="icon" type="image/x-icon" href="roary.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="header1">
+        <img class="roaryicon" src="roary.png" id="menuToggle">
+        <h1><a href="chatbot.html"><-back</a></h1>
+        <div id="sideMenu">
+            <button id="closeMenu">X</button>
+            <div id="block1">
+                <p>Welcome to your university adventure, brought to life by Roary McTaverstock, 
+                    your trusted guide through the maze of campus life! Need advice on where to 
+                    find books, connect with like-minded peers, or seek help? Just type your 
+                    question, and I'll do my best to assist you. Let's kickstart our journey 
+                    together! Simply type your query below, and let the exploration 
+                    begin! 🦁📚✨</p>
+            </div>
+            <div id="block1">
+                <img src="roary.png">
+            </div>
+            <div id="credits">
+                <p>Made by Students(Team06) for Students</p>
+            </div>
+        </div>
+    </div>
     <div class="faq-container">
-        <h1  style="color: rgb(250,250,250);" > Frequently Asked Questions </h1>
+        <h1> Frequently Asked Questions </h1>
         <div class="faq-question">What kind of data does the chatbot collect from users?</div>
         <div class="faq-answer">
             <p>Our chatbot collects data that you voluntarily provide during your interactions, such as questions about university services, course details, and your academic needs. .</p>
@@ -61,18 +59,6 @@
             <p>Yes, you can request access to any personal data stored by the chatbot or ask for its deletion. Please contact our university's IT support team, who will assist you with the process.</p>
         </div>
     </div>
-
-    <script>
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                if (answer.style.display === 'none') {
-                    answer.style.display = 'block';
-                } else {
-                    answer.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
