@@ -161,3 +161,22 @@ iframe {
   height: 87vh;
   overflow: hidden;
 }
+/*Faq page css*/
+.faq-container h1{
+  color: yellow;
+}
+.faq-question {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #232323;
+  cursor: pointer;
+  color: rgb(250,250,250);
+  border-radius: 15px;
+}
+.faq-answer {
+  padding: 20px;
+  display: none;
+  background-color: #232323;
+  color: rgb(250,250,250);
+  border-radius: 15px;
+}
